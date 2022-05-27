@@ -8,4 +8,6 @@ app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname + '/dist/examen_parcial/index.html'));
 });
 
+
+///servidor en el puerto 5000
 app.listen(process.env.PORT || 5000);
