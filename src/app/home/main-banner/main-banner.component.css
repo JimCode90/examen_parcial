@@ -1,0 +1,31 @@
+.banner-custom{
+  background-image: url("../../../assets/img/16.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 720px;
+  display: flex;
+}
+.title_banner{
+  font-family: "helvetica";
+  color: #3c3950;
+  font-weight: bold;
+  text-align: center;
+}
+.subtitle-banner{
+  color: #3c3950;
+  font-weight: 200;
+}
+.boton_banner{
+  padding: .6em 4em;
+  border: 2px solid #00bcd4;
+  text-decoration: none;
+  font-size: 1em;
+  color: #3c3950;
+  font-weight: bold;
+}
+
+.boton_banner:hover{
+  background-color: #00bcd4;
+  color: white;
+}

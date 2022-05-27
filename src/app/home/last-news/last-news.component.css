@@ -1,0 +1,38 @@
+.title-latest-news{
+  font-size: 3em;
+  color: #46485c;
+  font-style: normal;
+  font-weight: 100;
+  font-family: "montserrat";
+}
+
+.title-card{
+  font-style: normal;
+  font-weight: 200;
+  font-family: "montserrat";
+  font-size: 1.5em;
+  color: #46485c;
+}
+
+.subtitle-card {
+  font-weight: 100;
+  font-family: "helvetica";
+  font-size: .9em;
+  color: #75768e;
+}
+
+.card{
+  border: none;
+}
+
+.btn-card-read-more{
+  background-color: white;
+  border: 1px solid #00bcd4;
+  width: 15em;
+}
+
+.btn-card-read-more:hover{
+  background-color: #00bcd4;
+  color: white;
+  width: 15em;
+}
