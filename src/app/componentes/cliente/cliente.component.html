@@ -1,0 +1,72 @@
+<div class="row justify-content-center mt-5 mb-auto">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-title">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+          <h1 class="title-latest-news">BANDEJA DE CLIENTES</h1>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label class="form-label">Filtro por empresa</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="buscar..."
+                 [(ngModel)]="filtro.empresa"
+          >
+        </div>
+        <div class="alert text-center" *ngIf="clienteSeleccionado">
+          <p class="fw-semibold">Nombre Cliente: {{ clienteSeleccionado?.nombres }}</p>
+          <p class="fw-semibold">Empresa: {{ clienteSeleccionado?.empresa }}</p>
+          <p class="fw-semibold">Cargo cliente: {{ clienteSeleccionado?.cargo }}</p>
+          <p class="fw-semibold">Ciudad cliente: {{ clienteSeleccionado?.ciudad }}</p>
+        </div>
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th scope="col"
+                (click)="setOrder('empresa')"
+                [class.active]="ordenamiento == 'empresa'"
+            >
+              <span [hidden]="reversa"><i class="fa fa-chevron-down"></i></span>
+              <span [hidden]="!reversa"><i class="fa fa-chevron-up"></i></span>
+              EMPRESA
+            </th>
+            <th scope="col"
+                (click)="setOrder('nombres')"
+                [class.active]="ordenamiento == 'nombres'"
+            >
+              <span [hidden]="reversa"><i class="fa fa-chevron-down"></i></span>
+              <span [hidden]="!reversa"><i class="fa fa-chevron-up"></i></span>
+              NOMBRE
+            </th>
+            <th scope="col"
+                (click)="setOrder('cargo')"
+                [class.active]="ordenamiento == 'cargo'"
+            >
+              <span [hidden]="reversa"><i class="fa fa-chevron-down"></i></span>
+              <span [hidden]="!reversa"><i class="fa fa-chevron-up"></i></span>
+              CARGO</th>
+            <th scope="col"
+                (click)="setOrder('ciudad')"
+                [class.active]="ordenamiento == 'ciudad'"
+            >
+              <span [hidden]="reversa"><i class="fa fa-chevron-down"></i></span>
+              <span [hidden]="!reversa"><i class="fa fa-chevron-up"></i></span>
+              CIUDAD</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr (click)="seleccionarCliente(cliente)" *ngFor="let cliente of arrayClientes! | filterBy:filtro | orderBy: ordenamiento : reversa | paginate: { itemsPerPage: 10, currentPage: paginatorCliente }">
+            <th scope="row">{{ cliente.empresa }}</th>
+            <td>{{ cliente.nombres }}</td>
+            <td>{{ cliente.cargo }}</td>
+            <td>{{ cliente.ciudad }}</td>
+          </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="paginatorCliente = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

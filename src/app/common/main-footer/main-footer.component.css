@@ -1,0 +1,18 @@
+.my-footer {
+  width: 100%;
+  padding: 2.5rem 0;
+  color: #ffffff;
+  text-align: center;
+  background-color: #323232;
+  border-top: .05rem solid #e5e5e5;
+}
+.my-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.my-footer a {
+  text-decoration: none;
+  color : white;
+  font-size: 2em;
+  font-weight: bold;
+}

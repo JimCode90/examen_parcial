@@ -4,14 +4,19 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let empleado of arrayEmpleados">
         <div class="card mb-4">
-<!--          <svg class="bd-placeholder-img card-img-top" width="100%" height="325" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
-          <img class="bd-placeholder-img card-img-top" src="assets/img/patterns/light/bedge_grunge-thumb.jpg" alt="" width="100%" height="325">
+          <img class="bd-placeholder-img card-img-top" src="https://servicios.campus.pe/fotos/{{ empleado.foto }}"
+               alt="" width="100%" height="325">
 
           <div class="card-body">
-            <h3 class="title-card">BUSINESS NEEDS CUSTOMERS</h3>
-            <p class="subtitle-card">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h3 class="title-card">{{ empleado.nombres }} {{ empleado.apellidos }}</h3>
+            <p class="subtitle-card">
+              {{empleado.cargo}}, {{empleado.tratamiento}}, {{empleado.fechanacimiento}}, {{empleado.fechacontratacion}}
+              , {{empleado.direccion}}, {{empleado.ciudad}}, {{empleado.usuario}}, {{empleado.codigopostal}}
+              , {{empleado.pais}}, {{empleado.telefono}}, {{empleado.clave}},
+              {{empleado.foto}}, {{empleado.jefe}}
+            </p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary">
